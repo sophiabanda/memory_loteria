@@ -1,17 +1,19 @@
 // CONSTANTS ///////////////////////////////////////////////////
 const cardOptions = [
     {img: ''},
-    {img: '', matched: false},
-    {img: '', matched: false},
-    {img: '', matched: false},
-    {img: '', matched: false},
-    {img: '', matched: false},
-    {img: '', matched: false},
-    {img: '', matched: false},
+    {img: ''},
+    {img: ''},
+    {img: ''},
+    {img: ''},
+    {img: ''},
+    {img: ''},
+    {img: ''},
 ]
 
+const MAX_GUESSES = 6;
+
 // STATE VARS (MODEL) //////////////////////////////////////////////////
-let numberOfGuesses, gameTimer
+let 
 
 // CACHED ELS //////////////////////////////////////////////////
     //start button
