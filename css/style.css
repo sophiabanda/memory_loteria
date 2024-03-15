@@ -1,5 +1,6 @@
 body {
     border: 1px solid red;
+    text-align: center;
 }
 
 h1 {
@@ -19,7 +20,6 @@ h1 {
     margin-right: 100px;
     margin-left: 100px;
     padding: 50px;
-    /* margin: 0 auto; */
 }
 
 #container > .cards {
@@ -32,6 +32,21 @@ img {
     width: 100px;
     height: 155px;
 }
+
+button {
+    font-size: 25px;
+}
+
+#timer-and-guesses {
+    border: 5px solid gray;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+/* h2 {
+    border: 1px soild fuchsia
+} */
 
 
 

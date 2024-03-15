@@ -36,9 +36,10 @@ If player wins
     Some celebratory event happens
 
 STRETCH GOALS:
-Card animation; maybe cards rotate at win/loss, etc
-Surprise if you win with a certain card
-Add cursor image of either Valentina or Cholula sauce
+- Card animation; maybe cards rotate at win/loss, etc
+- Surprise if you win with a certain card
+- Add cursor image of either Valentina or Cholula sauce
+- Make a 16 card game
 
 
 Ideas from Jim's Concentration walkthrough video. Watch once you have yours fleshed out.
