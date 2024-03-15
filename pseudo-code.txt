@@ -1,9 +1,11 @@
  DEFINE REQUIRED CONSTANTS:
-Winning combinations
+Card options
+
 
 DEFINE STATE VARIABLES:
 Player selection
-Define the initial “board” with 12 individual card backs (they should be positioned at random)
+Define the initial “board” with 12 individual 
+card backs (they should be positioned at random)
 Game timer (2min) or countdown
 Initial amount of guesses allotted (5?)
 
@@ -13,19 +15,34 @@ Reset button - you can use the restart button any time
 Welcome header
 
 ACTIONS:
-Once the start button is pressed, all 12 cards flip over for 1.5 seconds to give you a chance to memorize
-The game is initiated with 
+Render board: All cards face down.
+"Press start to start.."
+
+Once the start button is pressed, all 12 cards 
+flip over for 1.5 seconds to give you a chance to memorize
+
 A player selects a card
-The card briefly flips over (3 seconds?), then back over
+The card briefly flips over (2 seconds?), then back over
 The player selects another card
-If it’s a match, the card remains upright with image showing
-If it’s not a match, a point is subtracted from available guesses
-If player runs out of guesses
-If player runs out of time
-Some womp womp event happens
+
+    If it’s a match, the card remains upright with image showing
+        If it’s not a match, a point is subtracted from available guesses
+
+    If player runs out of guesses
+        If player runs out of time
+            Some womp womp event happens
+
 If player wins
-Some celebratory event happens
+    Some celebratory event happens
 
 STRETCH GOALS:
 Card animation; maybe cards rotate at win/loss, etc
 Surprise if you win with a certain card
+Add cursor image of either Valentina or Cholula sauce
+
+
+Ideas from Jim's Concentration walkthrough video. Watch once you have yours fleshed out.
+https://www.youtube.com/watch?v=x3PurspM8_8
+
+- IMG ELEMENTS instead of DIVS
+    - empty src att, id's of #'s, empty alt att
