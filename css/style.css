@@ -1,0 +1,38 @@
+body {
+    border: 1px solid red;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    margin: 0
+}
+
+#container {
+    border: 2px dashed orange;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: minmax(150px, auto);
+    justify-content: space-between;
+    grid-gap: 20px;
+    justify-items: center;
+    margin-right: 100px;
+    margin-left: 100px;
+    padding: 50px;
+    /* margin: 0 auto; */
+}
+
+#container > .cards {
+    border: 5px solid #000000;
+    width: 100px;
+    height: 155px;
+}
+
+img {
+    width: 100px;
+    height: 155px;
+}
+
+
+
+
