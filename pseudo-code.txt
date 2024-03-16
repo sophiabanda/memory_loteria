@@ -51,8 +51,28 @@ https://www.youtube.com/watch?v=x3PurspM8_8
 
 WORK NOTES:
 
-shuffle = 
-cards = array of images
+function shuffleCards() {
+  //Fisher-Yates sorting algo
+  for (let i = cardOptions.length - 1; i > 0; i--) {
+    // start at second to last #, work back up to 1, not 0
+    // I'm not sure why we leave out the first and last, 
+    // though might be to do with Math
+
+    const j = Math.floor(Math.random() * (i + 1));
+    // assign a random number to j by multiplying by i+1 
+    (I think to make up for leaving off 1st and last indicies)
+
+    const temporary = cardOptions[i];
+    // create a temp var to hold the value of first looped idx
+
+    cardOptions[i] = cardOptions[j];
+    // reassign the value of that index with the randomized index
+    cardOptions[j] = temporary;
+    // assign the found randomized idx to the temp idx and repeat process
+    
+  }
+  return cardOptions;
+}
 
 
 // Yi Chien's algorigthm //////////////////////////////////////////////
