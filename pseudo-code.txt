@@ -53,3 +53,15 @@ WORK NOTES:
 
 shuffle = 
 cards = array of images
+
+
+// Yi Chien's algorigthm //////////////////////////////////////////////
+function shuffleCards() {
+  const tempDeck = Object.values(cardOptions);
+  newShuffledDeck = [];
+  while (tempDeck.length) {
+    const rndIdx = Math.floor(Math.random() * tempDeck.length);
+    newShuffledDeck.push(tempDeck.splice(rndIdx, 1)[0]);
+  }
+  return newShuffledDeck;
+}

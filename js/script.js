@@ -28,7 +28,6 @@ let shuffledCards; //array of 16 shuffled cards
 
 // CACHED ELS //////////////////////////////////////////////////
 const cards = [...document.querySelectorAll('img')];
-console.log('cards =>', cards);
 
 // EVENT LISTENERS /////////////////////////////////////////////
 
@@ -47,6 +46,7 @@ initialize();
 function initialize() {
   shuffleCards();
   cardOptions.forEach((imgOption, idx) => {
+    shuffleCards();
     cards[idx].setAttribute('src', imgOption.img);
   });
 
@@ -71,9 +71,9 @@ function shuffleCards() {
   return cardOptions;
 }
 
-// function handleSelection(event) {
-//     console.log(event)
-// }
+function handleSelection(event) {
+  console.log(event);
+}
 
 function compareChoices() {}
 
