@@ -19,17 +19,16 @@ const cardOptions = [
   // each of the card options will be used twice and shuffled
   // so there needs to be two of each in order to not modify the original object
 ];
-// console.log(cardOptions)
-
 const backOfCard = '/css/images/mexican_blanket.jpeg';
 
 // STATE VARS (MODEL) //////////////////////////////////////////////////
-let shuffledCards; //array of 16 shuffled cards
 
 // CACHED ELS //////////////////////////////////////////////////
 const cards = [...document.querySelectorAll('img')];
+const container = document.getElementById('container');
 
 // EVENT LISTENERS /////////////////////////////////////////////
+container.addEventListener('click', handleSelection);
 
 // FUNCTIONS  //////////////////////////////////////////////////
 initialize();
@@ -63,7 +62,9 @@ function shuffleCards() {
 }
 
 function handleSelection(event) {
+  if (event.target.tagName !== 'IMG') return;
   console.log(event.target.id);
+  console.log(event.target.src);
 }
 
 function compareChoices() {}

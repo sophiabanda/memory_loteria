@@ -11,72 +11,67 @@
   } */
 
 @font-face {
-    font-family: 'Mexicanero';
-    src: url('/css/Mexicanero.otf');
+  font-family: 'Mexicanero';
+  src: url('/css/Mexicanero.otf');
 }
 
 * {
-    font-family: 'Mexicanero';
+  font-family: 'Mexicanero';
 }
 
 body {
-    border: 1px solid red;
-    text-align: center;
-    background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.5)), url('/css/images/negative-space-bright-yellow-brick.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    
+  border: 3px solid black;
+  text-align: center;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url('/css/images/negative-space-bright-yellow-brick.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 h1 {
-    text-align: center;
-    font-size: 80px;
-    margin: 0;
-    text-shadow: 5px 5px 5px rgba(255, 255, 255, 0.8);
+  text-align: center;
+  font-size: 80px;
+  margin: 0;
+  text-shadow: 5px 5px 5px rgba(255, 255, 255, 0.8);
 }
 
 #container {
-    border: 2px dashed orange;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: minmax(150px, auto);
-    justify-content: space-between;
-    grid-gap: 20px;
-    justify-items: center;
-    margin-right: 100px;
-    margin-left: 100px;
-    padding: 50px;
+  border: 3px dashed red;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: minmax(150px, auto);
+  justify-content: space-between;
+  grid-gap: 20px;
+  justify-items: center;
+  margin-right: 100px;
+  margin-left: 100px;
+  padding: 50px;
 }
 
 #container > .cards {
-    border: 5px solid #000000;
-    width: 100px;
-    height: 155px;
+  border: 5px solid #000000;
+  width: 100px;
+  height: 155px;
 }
 
 img {
-    width: 100px;
-    height: 155px;
-    border-radius: 5px;
-    border: 2px solid white;
-    box-shadow: 2px 2px 5px 2px rgba(0,0,0,.8);
+  width: 100px;
+  height: 155px;
+  border-radius: 5px;
+  border: 2px solid white;
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.8);
 }
 
 button {
-    font-size: 25px;
+  font-size: 25px;
 }
 
 #timer-and-guesses {
-    border: 5px solid gray;
-    display: flex;
-    text-align: center;
-    justify-content: center;
+  border: 3px solid black;
+  display: flex;
+  text-align: center;
+  justify-content: center;
 }
-
-h2 {
-    background-color: fuchsia;
-}
-
-
-
-
