@@ -47,3 +47,9 @@ https://www.youtube.com/watch?v=x3PurspM8_8
 
 - IMG ELEMENTS instead of DIVS
     - empty src att, id's of #'s, empty alt att
+
+
+WORK NOTES:
+
+shuffle = 
+cards = array of images
