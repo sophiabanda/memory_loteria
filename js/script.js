@@ -18,19 +18,19 @@ let max_guesses;
 // CACHED ELS //////////////////////////////////////////////////
 const cards = [...document.querySelectorAll('img')];
 
-
 // EVENT LISTENERS /////////////////////////////////////////////
-// container.addEventListener('click', handleSelection)
+
 
 // FUNCTIONS  //////////////////////////////////////////////////
 initialize()
 
 function initialize() {
     cards.forEach((card) => {
-        card.setAttribute('src', '/css/images/mexican_blanket.jpeg')
+        card.setAttribute('src', '/css/images/mexican_blanket.jpeg');
+        card.setAttribute('alt', 'traditional mexican blanket')
         // card.setAttribute('src', '/css/images/textile.webp')
     })
-    
+
     // reset all div/img's to back of card image
     // clear timer
     // reset # of guesses
@@ -43,9 +43,9 @@ function initialize() {
     render();
 }
 
-function handleSelection(event) {
-    console.log('click', event.target)
-}
+// function handleSelection(event) {
+//     console.log(event)
+// }
 
 function compareChoices() {
 
@@ -53,7 +53,7 @@ function compareChoices() {
 
 
 function render() {
-    handleSelection();
+    // handleSelection();
     compareChoices();
 }
 
