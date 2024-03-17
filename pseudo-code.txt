@@ -35,11 +35,23 @@ The player selects another card
 If player wins
     Some celebratory event happens
 
+
+CSS TO IMPLEMENT
+- LEFT COLUMN FOR TIMER AND 
+
+
 STRETCH GOALS:
 - Card animation; maybe cards rotate at win/loss, etc
 - Surprise if you win with a certain card
 - Add cursor image of either Valentina or Cholula sauce
-- Make a 16 card game
+- Ensure accessibilty to the best of ability
+
+
+
+
+
+
+
 
 
 Ideas from Jim's Concentration walkthrough video. Watch once you have yours fleshed out.
@@ -51,6 +63,7 @@ https://www.youtube.com/watch?v=x3PurspM8_8
 
 WORK NOTES:
 
+___________________________________________________________________________
 function shuffleCards() {
   //Fisher-Yates sorting algo
   for (let i = cardOptions.length - 1; i > 0; i--) {
@@ -74,8 +87,8 @@ function shuffleCards() {
   return cardOptions;
 }
 
-
-// Yi Chien's algorigthm //////////////////////////////////////////////
+___________________________________________________________________________
+// Yi Chien's algorigthm 
 function shuffleCards() {
   const tempDeck = Object.values(cardOptions);
   newShuffledDeck = [];
@@ -85,3 +98,6 @@ function shuffleCards() {
   }
   return newShuffledDeck;
 }
+
+___________________________________________________________________________
+
