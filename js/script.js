@@ -1,37 +1,39 @@
 // CONSTANTS ///////////////////////////////////////////////////
 const cardOptions = [
-  { img: '/css/images/corazon.jpg' },
-  { img: '/css/images/borracho.jpg' },
-  { img: '/css/images/corazon.jpg' },
-  { img: '/css/images/selena_cantante.jpg' },
-  { img: '/css/images/gallo.jpg' },
-  { img: '/css/images/luna.jpg' },
-  { img: '/css/images/gallo.jpg' },
-  { img: '/css/images/luna.jpg' },
-  { img: '/css/images/nopal.jpg' },
-  { img: '/css/images/escalera.jpg' },
-  { img: '/css/images/borracho.jpg' },
-  { img: '/css/images/paraguas.jpg' },
-  { img: '/css/images/nopal.jpg' },
-  { img: '/css/images/paraguas.jpg' },
-  { img: '/css/images/selena_cantante.jpg' },
-  { img: '/css/images/escalera.jpg' },
+  { img: '/css/images/corazon.jpg', hidden: false },
+  { img: '/css/images/borracho.jpg', hidden: false },
+  { img: '/css/images/corazon.jpg', hidden: false },
+  { img: '/css/images/selena_cantante.jpg', hidden: false },
+  { img: '/css/images/gallo.jpg', hidden: false },
+  { img: '/css/images/luna.jpg', hidden: false },
+  { img: '/css/images/gallo.jpg', hidden: false },
+  { img: '/css/images/luna.jpg', hidden: false },
+  { img: '/css/images/nopal.jpg', hidden: false },
+  { img: '/css/images/escalera.jpg', hidden: false },
+  { img: '/css/images/borracho.jpg', hidden: false },
+  { img: '/css/images/paraguas.jpg', hidden: false },
+  { img: '/css/images/nopal.jpg', hidden: false },
+  { img: '/css/images/paraguas.jpg', hidden: false },
+  { img: '/css/images/selena_cantante.jpg', hidden: false },
+  { img: '/css/images/escalera.jpg', hidden: false },
   // each of the card options will be used twice and shuffled
-  // so there needs to be two of each in order to not modify the original object
 ];
 const backOfCard = '/css/images/mexican_blanket.jpeg';
-
+console.log(cardOptions[0].hidden);
 // STATE VARS (MODEL) //////////////////////////////////////////////////
 
 // CACHED ELS //////////////////////////////////////////////////
 const cards = [...document.querySelectorAll('img')];
+cards.forEach((card) => {
+  card.setAttribute('src', backOfCard);
+});
 const container = document.getElementById('container');
 
 // EVENT LISTENERS /////////////////////////////////////////////
 container.addEventListener('click', handleSelection);
 
 // FUNCTIONS  //////////////////////////////////////////////////
-initialize();
+// initialize();
 // reset all div/img's to back of card image
 // clear timer
 // reset # of guesses
@@ -43,13 +45,12 @@ initialize();
 // render # of guesses
 
 function initialize() {
-  shuffleCards();
-  cardOptions.forEach((imgOption, idx) => {
-    cards[idx].setAttribute('src', imgOption.img);
-    // is there a way to set the alt att dynamically, too?
-  });
-
-  render();
+  // shuffleCards();
+  // cardOptions.forEach((imgOption, idx) => {
+  //   cards[idx].setAttribute('src', imgOption.img);
+  //   // is there a way to set the alt att dynamically, too?
+  // });
+  handleSelection();
 }
 
 function shuffleCards() {
@@ -65,11 +66,18 @@ function handleSelection(event) {
   if (event.target.tagName !== 'IMG') return;
   console.log(event.target.id);
   console.log(event.target.src);
+
+  // if a card is chosen, you can only choose
+  // one other card before they either
+  // stay up bc they are the same
+  // flip back because they are different
+  // decrement guess allotment
 }
 
-function compareChoices() {}
-
-function render() {
-  // handleSelection();
-  compareChoices();
+function compareChoices() {
+  // store initial selection for camparison
 }
+
+function render() {}
+
+render();
