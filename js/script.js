@@ -55,13 +55,15 @@ function initialize() {
     if (cards.hidden === true) {
       cards.setAttribute('src', backOfCard);
     }
-    console.log('imgOp', imgOption, 'idx', idx);
+    // console.log('imgOp', imgOption, 'idx', idx);
     // is there a way to set the alt att dynamically, too?
   });
   handleSelection();
 }
 
-// function startGame() {}
+function startGame() {
+  //start timer
+}
 
 function shuffleCards() {
   //Fisher-Yates sorting algo
@@ -72,27 +74,18 @@ function shuffleCards() {
   return cardOptions;
 }
 
+// console.log(event.target.id);
+// console.log(event.target.src);
 function handleSelection(event) {
   if (event.target.tagName !== 'IMG') return;
-  // console.log(event.target.id);
-  // console.log(event.target.src);
   if (cardOne === null) {
     cardOne = event.target.src;
+    console.log(cardOne);
   } else {
     cardTwo = event.target.src;
+    console.log(cardTwo);
     compareChoices();
   }
-
-  // when card is chosen
-  // set card to first choice
-  // on next click, set card to second choice
-  // comapre two choices
-
-  // if a card is chosen, you can only choose
-  // one other card before they either
-  // stay up bc they are the same
-  // flip back because they are different
-  // decrement guess allotment
 }
 
 function compareChoices() {
@@ -100,12 +93,10 @@ function compareChoices() {
     console.log('Match!');
   } else {
     console.log('No match!');
-
-    cardOne === null && cardTwo === null;
   }
-  // console.log('one=>', cardOne, 'two=>', cardTwo);
-
+  console.log('one=>', cardOne, 'two=>', cardTwo);
   clearCards();
+  // decrement guess allotment
   // change class or property to hidden or not
 }
 
@@ -113,7 +104,3 @@ function clearCards() {
   cardOne = null;
   cardTwo = null;
 }
-
-function render() {}
-
-render();
