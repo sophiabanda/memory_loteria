@@ -1,21 +1,21 @@
 // CONSTANTS ///////////////////////////////////////////////////
 const cardOptions = [
-  { img: '/css/images/corazon.jpg', hidden: false },
-  { img: '/css/images/borracho.jpg', hidden: false },
-  { img: '/css/images/corazon.jpg', hidden: false },
-  { img: '/css/images/selena_cantante.jpg', hidden: false },
-  { img: '/css/images/gallo.jpg', hidden: false },
-  { img: '/css/images/luna.jpg', hidden: false },
-  { img: '/css/images/gallo.jpg', hidden: false },
-  { img: '/css/images/luna.jpg', hidden: false },
-  { img: '/css/images/nopal.jpg', hidden: false },
-  { img: '/css/images/escalera.jpg', hidden: false },
-  { img: '/css/images/borracho.jpg', hidden: false },
-  { img: '/css/images/paraguas.jpg', hidden: false },
-  { img: '/css/images/nopal.jpg', hidden: false },
-  { img: '/css/images/paraguas.jpg', hidden: false },
-  { img: '/css/images/selena_cantante.jpg', hidden: false },
-  { img: '/css/images/escalera.jpg', hidden: false },
+  { img: '/css/images/corazon.jpg', id: c4, hidden: true },
+  { img: '/css/images/borracho.jpg', hidden: true },
+  { img: '/css/images/corazon.jpg', hidden: true },
+  { img: '/css/images/selena_cantante.jpg', hidden: true },
+  { img: '/css/images/gallo.jpg', hidden: true },
+  { img: '/css/images/luna.jpg', hidden: true },
+  { img: '/css/images/gallo.jpg', hidden: true },
+  { img: '/css/images/luna.jpg', hidden: true },
+  { img: '/css/images/nopal.jpg', hidden: true },
+  { img: '/css/images/escalera.jpg', hidden: true },
+  { img: '/css/images/borracho.jpg', hidden: true },
+  { img: '/css/images/paraguas.jpg', hidden: true },
+  { img: '/css/images/nopal.jpg', hidden: true },
+  { img: '/css/images/paraguas.jpg', hidden: true },
+  { img: '/css/images/selena_cantante.jpg', hidden: true },
+  { img: '/css/images/escalera.jpg', hidden: true },
   // each of the card options will be used twice and shuffled
 ];
 const backOfCard = '/css/images/mexican_blanket.jpg';
@@ -48,17 +48,17 @@ cards.forEach((card) => {
 initialize();
 
 function initialize() {
-  // cardOptions.forEach((card) => {
-  //   card.hidden = true;
-  //   console.log(card.hidden);
-  // });
   shuffleCards();
-  card.hidden = true;
   cardOptions.forEach((imgOption, idx) => {
-    cards[idx].setAttribute('src', imgOption.img);
+    if (imgOption.hidden) {
+      cards[idx].setAttribute('src', backOfCard);
+    } else {
+      cards[idx].setAttribute('src', imgOption.img);
+    }
     // console.log('imgOp', imgOption, 'idx', idx);
     // is there a way to set the alt att dynamically, too?
   });
+  console.log(cardOptions);
   handleSelection();
 }
 
@@ -76,19 +76,21 @@ function shuffleCards() {
 }
 
 function handleFlip(event) {
-  console.log(event.target);
+  console.log(event.target.id);
+
+  // Use .find method on cardOptions
+  // for each card, check if card's id === event.target.id
+  // if so, hidden = false
 }
 
-// console.log(event.target.id);
-// console.log(event.target.src);
 function handleSelection(event) {
   if (event.target.tagName !== 'IMG') return;
   if (cardOne === null) {
     cardOne = event.target.src;
-    console.log(cardOne);
+    // console.log(cardOne);
   } else {
     cardTwo = event.target.src;
-    console.log(cardTwo);
+    // console.log(cardTwo);
     compareChoices();
   }
 }
@@ -99,7 +101,7 @@ function compareChoices() {
   } else {
     console.log('No match!');
   }
-  console.log('one=>', cardOne, 'two=>', cardTwo);
+  // console.log('one=>', cardOne, 'two=>', cardTwo);
   clearCards();
   // decrement guess allotment
   // change class or property to hidden or not
