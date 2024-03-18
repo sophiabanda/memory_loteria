@@ -76,14 +76,12 @@ function handleSelection(event) {
   if (event.target.tagName !== 'IMG') return;
   // console.log(event.target.id);
   // console.log(event.target.src);
-
   if (cardOne === null) {
     cardOne = event.target.src;
   } else {
     cardTwo = event.target.src;
     compareChoices();
   }
-  // console.log('one=>', cardOne, 'two=>', cardTwo);
 
   // when card is chosen
   // set card to first choice
@@ -99,9 +97,9 @@ function handleSelection(event) {
 
 function compareChoices() {
   if (cardOne === cardTwo) {
-    // console.log('Match!');
+    console.log('Match!');
   } else {
-    // console.log('No match!');
+    console.log('No match!');
 
     cardOne === null && cardTwo === null;
   }
