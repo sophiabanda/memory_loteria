@@ -20,14 +20,13 @@ const cardOptions = [
 ];
 const backOfCard = '/css/images/mexican_blanket.jpg';
 // console.log(cardOptions[5].img);
+
 // STATE VARS (MODEL) //////////////////////////////////////////////////
 let cardOne = null;
 let cardTwo = null;
+
 // CACHED ELS //////////////////////////////////////////////////
 const cards = [...document.querySelectorAll('img')];
-cards.forEach((card) => {
-  card.setAttribute('src', backOfCard);
-});
 const container = document.getElementById('container');
 
 // EVENT LISTENERS /////////////////////////////////////////////
@@ -47,18 +46,22 @@ container.addEventListener('click', handleSelection);
 initialize();
 
 function initialize() {
-  shuffleCards();
-  cardOptions.forEach((card, idx) => {
-    cards[idx].setAttribute('src', backOfCard);
+  cardOptions.forEach((card) => {
+    card.hidden === true;
   });
+  shuffleCards();
   cardOptions.forEach((imgOption, idx) => {
     cards[idx].setAttribute('src', imgOption.img);
+    if (cards.hidden === true) {
+      cards.setAttribute('src', backOfCard);
+    }
+    console.log('imgOp', imgOption, 'idx', idx);
     // is there a way to set the alt att dynamically, too?
   });
   handleSelection();
 }
 
-function startGame() {}
+// function startGame() {}
 
 function shuffleCards() {
   //Fisher-Yates sorting algo
@@ -71,14 +74,17 @@ function shuffleCards() {
 
 function handleSelection(event) {
   if (event.target.tagName !== 'IMG') return;
-  console.log(event.target.id);
-  console.log(event.target.src);
+  // console.log(event.target.id);
+  // console.log(event.target.src);
+
   if (cardOne === null) {
     cardOne = event.target.src;
   } else {
     cardTwo = event.target.src;
     compareChoices();
   }
+  // console.log('one=>', cardOne, 'two=>', cardTwo);
+
   // when card is chosen
   // set card to first choice
   // on next click, set card to second choice
@@ -93,15 +99,21 @@ function handleSelection(event) {
 
 function compareChoices() {
   if (cardOne === cardTwo) {
-    console.log(`It's a match!`);
+    // console.log('Match!');
   } else {
-    console.log(`Not this time.`);
-    cardOne === null && cardTwo === null;
-    console.log(cardOne, cardTwo);
-  }
+    // console.log('No match!');
 
+    cardOne === null && cardTwo === null;
+  }
+  // console.log('one=>', cardOne, 'two=>', cardTwo);
+
+  clearCards();
   // change class or property to hidden or not
-  // reset card store values
+}
+
+function clearCards() {
+  cardOne = null;
+  cardTwo = null;
 }
 
 function render() {}

@@ -12,6 +12,7 @@ body {
   margin: 0 auto;
   height: 100%;
   display: grid;
+  color: rgb(27, 29, 79);
 }
 
 body {
@@ -28,7 +29,7 @@ body {
 
 h1 {
   text-align: center;
-  font-size: 11vw;
+  font-size: 8vw;
   margin: 0;
   text-shadow: 5px 5px 5px rgba(255, 255, 255, 0.8);
 }
@@ -60,6 +61,7 @@ img {
 button {
   font-size: 3vw;
   justify-self: center;
+  color: rgb(27, 29, 79);
 }
 
 #timer-and-guesses {
