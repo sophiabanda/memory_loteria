@@ -23,13 +23,15 @@ const backOfCard = '/css/images/mexican_blanket.jpg';
 
 // STATE VARS (MODEL) //////////////////////////////////////////////////
 let cardOne = null;
+let cardOneSource;
 let cardTwo = null;
+let cardTwoSource;
 // CACHED ELS //////////////////////////////////////////////////
 const cards = [...document.querySelectorAll('img')];
 const container = document.getElementById('container');
 
 // EVENT LISTENERS /////////////////////////////////////////////
-container.addEventListener('click', handleSelection);
+// container.addEventListener('click', handleSelection);
 cards.forEach((card) => {
   card.addEventListener('click', handleFlip);
 });
@@ -49,7 +51,8 @@ function initialize() {
       cards[idx].setAttribute('src', imgOption.img);
     }
   });
-  handleSelection();
+  // handleSelection();
+  console.log(cardOptions, cards);
 }
 
 function startGame() {
@@ -70,36 +73,34 @@ function handleFlip(event) {
   let foundCard = cardOptions.find((card) => card.id === clickedCardId);
   foundCard.hidden = false;
   cards[clickedCardId].src = foundCard.img;
-  // console.log('found=>', foundCard);
-  // console.log('cards,click,src=>', cards[clickedCardId].src);
-}
 
-function handleSelection(event) {
-  // let clickedCardId = parseInt(event.target.id.slice(1));
-  // let foundCard = cardOptions.find((card) => card.id === clickedCardId);
-  // foundCard.hidden = false;
-  // cards[clickedCardId].src = foundCard.img;
-  if (!event || event.target.tagName !== 'IMG') return;
   if (cardOne === null) {
-    cardOne = event.target.src;
-    console.log(cardOne);
+    cardOne = cards[clickedCardId];
   } else {
-    cardTwo = event.target.src;
-    console.log(cardTwo);
-    compareChoices();
+    cardTwo = cards[clickedCardId];
   }
+  // console.log('clickedCardId=>', clickedCardId, 'foundCard=>', foundCard);
+  // console.log('cardOne=>', cardOne, 'cardTwo=>', cardTwo);
+  compareChoices();
 }
 
 function compareChoices() {
-  if (cardOne === cardTwo) {
-    console.log('Match!');
+  if (cardOne === null || cardTwo === null) {
+    return;
+  } else if (cardOne === cardTwo) {
+    console.log(`It's a celebration!`); // maybe as sound plays?
   } else {
-    console.log('No match!');
+    console.log(`No match!`); // maybe a sad sound plays
+    setTimeout(flipBack, 2000);
+    // decrement guesses
   }
-  // console.log('one=>', cardOne, 'two=>', cardTwo);
-  clearCards();
-  // decrement guess allotment
-  // change class or property to hidden or not
+
+  setTimeout(clearCards, 2500);
+}
+
+function flipBack() {
+  cardOne.src = backOfCard;
+  cardTwo.src = backOfCard;
 }
 
 function clearCards() {
