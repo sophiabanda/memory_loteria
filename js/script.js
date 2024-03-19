@@ -78,7 +78,7 @@ function handleFlip(event) {
 }
 
 function handleSelection(event) {
-  if (event.target.tagName !== 'IMG') return;
+  if (!event || event.target.tagName !== 'IMG') return;
   if (cardOne === null) {
     cardOne = event.target.src;
     console.log(cardOne);
