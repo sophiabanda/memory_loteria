@@ -1,5 +1,11 @@
 # Memory Lotería
 
+### _Welcome to my game of Concentration!_
+
+This browser game of Concentration is inspired by a game from my childhood,
+Mexican Lotería. It's been written in way that will be easy to optimize,
+enhance and expand in the future.
+
 # h1
 
 ## h2, etc
