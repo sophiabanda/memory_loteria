@@ -29,7 +29,7 @@ let cardTwoSource;
 // CACHED ELS //////////////////////////////////////////////////
 const cards = [...document.querySelectorAll('img')];
 const container = document.getElementById('container');
-
+const guessContainer = document.getElementById('guesses');
 // EVENT LISTENERS /////////////////////////////////////////////
 // container.addEventListener('click', handleSelection);
 cards.forEach((card) => {
@@ -92,7 +92,7 @@ function compareChoices() {
     setTimeout(flipBack, 2000);
     // decrement guesses
   }
-  setTimeout(clearCards, 2500);
+  setTimeout(clearCards, 2200);
 }
 
 function flipBack() {
