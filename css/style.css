@@ -64,12 +64,12 @@ button {
   color: rgb(27, 29, 79);
 }
 
-#timer-and-guesses {
+#guesses {
   border: 3px solid black;
   display: flex;
   text-align: center;
   justify-content: center;
-  font-size: 2vw;
+  font-size: 7vw;
 }
 
 .fade-out {

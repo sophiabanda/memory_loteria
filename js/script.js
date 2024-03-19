@@ -31,16 +31,15 @@ const cards = [...document.querySelectorAll('img')];
 const container = document.getElementById('container');
 const guessContainer = document.getElementById('guesses');
 let bodyContainer = document.querySelector('body');
+let resetButton;
 
 // ------ EVENT LISTENERS --------------------------------------------------------------
 cards.forEach((card) => {
   card.addEventListener('click', handleFlipSelection);
 });
-
 // ------ FUNCTIONS  -------------------------------------------------------------------
 
 initialize();
-
 function initialize() {
   numOfGuesses = 6;
   guessContainer.innerText = `# of Guesses: ${numOfGuesses}`;
@@ -54,10 +53,6 @@ function initialize() {
       cards[idx].setAttribute('src', imgOption.img);
     }
   });
-}
-
-function startGame() {
-  //start timer
 }
 
 function shuffleCards() {
