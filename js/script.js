@@ -24,7 +24,6 @@ const backOfCard = '/css/images/mexican_blanket.jpg';
 // STATE VARS (MODEL) //////////////////////////////////////////////////
 let cardOne = null;
 let cardTwo = null;
-let mixedDeck;
 // CACHED ELS //////////////////////////////////////////////////
 const cards = [...document.querySelectorAll('img')];
 const container = document.getElementById('container');
@@ -37,10 +36,10 @@ cards.forEach((card) => {
 // FUNCTIONS  //////////////////////////////////////////////////
 
 initialize();
-
+// settimeout for start timer after flip
+// set interval for timer
 function initialize() {
   shuffleCards();
-  mixedDeck = [];
   cardOptions.forEach((imgOption, idx) => {
     imgOption.id = idx;
     cards[idx].setAttribute('src', imgOption.img);
@@ -67,17 +66,19 @@ function shuffleCards() {
 }
 
 function handleFlip(event) {
-  let clickedCard = event.target.id.slice(1);
-  cardOptions.find((card) => {
-    let id = card.id;
-    if (id === clickedCard) {
-      card.hidden = false;
-    }
-    console.log(card.hidden);
-  });
+  let clickedCardId = parseInt(event.target.id.slice(1));
+  let foundCard = cardOptions.find((card) => card.id === clickedCardId);
+  foundCard.hidden = false;
+  cards[clickedCardId].src = foundCard.img;
+  // console.log('found=>', foundCard);
+  // console.log('cards,click,src=>', cards[clickedCardId].src);
 }
 
 function handleSelection(event) {
+  // let clickedCardId = parseInt(event.target.id.slice(1));
+  // let foundCard = cardOptions.find((card) => card.id === clickedCardId);
+  // foundCard.hidden = false;
+  // cards[clickedCardId].src = foundCard.img;
   if (!event || event.target.tagName !== 'IMG') return;
   if (cardOne === null) {
     cardOne = event.target.src;
