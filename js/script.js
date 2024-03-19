@@ -1,4 +1,4 @@
-// CONSTANTS ///////////////////////////////////////////////////
+// ------ CONSTANTS -------------------------------------------------------------------
 const cardOptions = [
   { img: '/css/images/corazon.jpg', hidden: true },
   { img: '/css/images/borracho.jpg', hidden: true },
@@ -21,26 +21,28 @@ const cardOptions = [
 const backOfCard = '/css/images/mexican_blanket.jpg';
 // console.log(cardOptions[5].img);
 
-// STATE VARS (MODEL) //////////////////////////////////////////////////
+// ------ STATE VARS (MODEL) -----------------------------------------------------------
 let cardOne = null;
-let cardOneSource;
 let cardTwo = null;
-let cardTwoSource;
-// CACHED ELS //////////////////////////////////////////////////
+let numOfGuesses;
+
+// ------ CACHED ELS -------------------------------------------------------------------
 const cards = [...document.querySelectorAll('img')];
 const container = document.getElementById('container');
 const guessContainer = document.getElementById('guesses');
-// EVENT LISTENERS /////////////////////////////////////////////
-// container.addEventListener('click', handleSelection);
+let bodyContainer = document.querySelector('body');
+let resetButton;
+
+// ------ EVENT LISTENERS --------------------------------------------------------------
 cards.forEach((card) => {
   card.addEventListener('click', handleFlipSelection);
 });
-// FUNCTIONS  //////////////////////////////////////////////////
+// ------ FUNCTIONS  -------------------------------------------------------------------
 
 initialize();
-// settimeout for start timer after flip
-// set interval for timer
 function initialize() {
+  numOfGuesses = 6;
+  guessContainer.innerText = `# of Guesses: ${numOfGuesses}`;
   shuffleCards();
   cardOptions.forEach((imgOption, idx) => {
     imgOption.id = idx;
@@ -51,10 +53,6 @@ function initialize() {
       cards[idx].setAttribute('src', imgOption.img);
     }
   });
-}
-
-function startGame() {
-  //start timer
 }
 
 function shuffleCards() {
@@ -74,8 +72,10 @@ function handleFlipSelection(event) {
 
   if (cardOne === null) {
     cardOne = cards[clickedCardId];
+    cards[clickedCardId].classList.add('no-click');
   } else {
     cardTwo = cards[clickedCardId];
+    cards[clickedCardId].classList.add('no-click');
   }
   // console.log('clickedCardId=>', clickedCardId, 'foundCard=>', foundCard);
   console.log('cardOne=>', cardOne, 'cardTwo=>', cardTwo);
@@ -89,18 +89,40 @@ function compareChoices() {
     console.log(`It's a celebration!`); // maybe as sound plays?
   } else {
     console.log(`No match!`); // maybe a sad sound plays
-    setTimeout(flipBack, 2000);
-    // decrement guesses
+    setTimeout(flipBack, 1000);
+    cardOne.classList.remove('no-click');
+    cardTwo.classList.remove('no-click');
   }
-  setTimeout(clearCards, 2200);
+  setTimeout(clearCards, 1150);
 }
 
 function flipBack() {
   cardOne.src = backOfCard;
   cardTwo.src = backOfCard;
+  numOfGuesses--;
+  guessContainer.innerText = `# of Guesses: ${numOfGuesses}`;
+  if (numOfGuesses < 1) {
+    loseGame();
+  }
 }
 
 function clearCards() {
   cardOne = null;
   cardTwo = null;
+}
+
+function loseGame() {
+  guessContainer.innerText = `Nooo... Would you like to try again?`;
+  cards.forEach((card) => {
+    card.classList.add('fade-out');
+  });
+}
+
+function winGame() {
+  cards.forEach((card) => {
+    card.classList.add('fade-out');
+  });
+  bodyContainer.classList.add('fade-in');
+  bodyContainer.style.backgroundImage = 'url(css/images/papel_picado.jpeg)';
+  container.innerHTML = '<h1>YOU WON!!!</H1>';
 }
