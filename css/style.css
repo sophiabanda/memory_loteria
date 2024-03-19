@@ -84,3 +84,7 @@ button {
   opacity: 1;
   transition: opacity 2s linear;
 }
+
+.no-click {
+  pointer-events: none;
+}
