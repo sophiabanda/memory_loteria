@@ -23,15 +23,15 @@ const backOfCard = '/css/images/mexican_blanket.jpg';
 
 // STATE VARS (MODEL) //////////////////////////////////////////////////
 let cardOne = null;
-let cardOneSource;
 let cardTwo = null;
-let cardTwoSource;
+let numOfGuesses;
 // CACHED ELS //////////////////////////////////////////////////
 const cards = [...document.querySelectorAll('img')];
 const container = document.getElementById('container');
 const guessContainer = document.getElementById('guesses');
+let bodyContainer = document.querySelector('body');
+console.log(bodyContainer);
 // EVENT LISTENERS /////////////////////////////////////////////
-// container.addEventListener('click', handleSelection);
 cards.forEach((card) => {
   card.addEventListener('click', handleFlipSelection);
 });
@@ -41,6 +41,8 @@ initialize();
 // settimeout for start timer after flip
 // set interval for timer
 function initialize() {
+  numOfGuesses = 5;
+  guessContainer.innerText = `# of Guesses: ${numOfGuesses}`;
   shuffleCards();
   cardOptions.forEach((imgOption, idx) => {
     imgOption.id = idx;
@@ -89,18 +91,39 @@ function compareChoices() {
     console.log(`It's a celebration!`); // maybe as sound plays?
   } else {
     console.log(`No match!`); // maybe a sad sound plays
-    setTimeout(flipBack, 2000);
-    // decrement guesses
+    setTimeout(flipBack, 1000);
   }
-  setTimeout(clearCards, 2200);
+
+  setTimeout(clearCards, 1150);
 }
 
 function flipBack() {
   cardOne.src = backOfCard;
   cardTwo.src = backOfCard;
+  numOfGuesses--;
+  guessContainer.innerText = `# of Guesses: ${numOfGuesses}`;
+  if (numOfGuesses < 1) {
+    loseGame();
+  }
 }
 
 function clearCards() {
   cardOne = null;
   cardTwo = null;
+}
+
+function loseGame() {
+  guessContainer.innerText = `Nooo... Would you like to try again?`;
+  cards.forEach((card) => {
+    card.classList.add('fade-out');
+  });
+}
+
+function winGame() {
+  cards.forEach((card) => {
+    card.classList.add('fade-out');
+  });
+  bodyContainer.classList.add('fade-in');
+  bodyContainer.style.backgroundImage = 'url(css/images/papel_picado.jpeg)';
+  container.innerHTML = '<h1>YOU WON!!!</H1>';
 }
