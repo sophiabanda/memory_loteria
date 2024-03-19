@@ -73,16 +73,26 @@ function shuffleCards() {
 }
 
 function handleFlip(event) {
-  let clickedCard = event.target.id;
+  let clickedCard = event.target.id.slice(1);
   cardOptions.find((card) => {
-    let id = card.id;
-    let stringId = String(id);
-    if (`c${stringId}` === clickedCard) {
+    console.log(card.id, clickedCard);
+
+    if (clickedCard === card.id) {
       card.hidden = false;
-      card.img = event.target;
     }
   });
 }
+// would .replace work better for this?
+
+// let clickedCard = event.target.id;
+// cardOptions.find((card) => {
+//   let id = card.id;
+//   let stringId = String(id);
+//   if (`c${stringId}` === clickedCard) {
+//     card.hidden = false;
+//     card.img = event.target;
+//   }
+// });
 
 function handleSelection(event) {
   if (!event || event.target.tagName !== 'IMG') return;
