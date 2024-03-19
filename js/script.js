@@ -33,7 +33,7 @@ const container = document.getElementById('container');
 // EVENT LISTENERS /////////////////////////////////////////////
 // container.addEventListener('click', handleSelection);
 cards.forEach((card) => {
-  card.addEventListener('click', handleFlip);
+  card.addEventListener('click', handleFlipSelection);
 });
 // FUNCTIONS  //////////////////////////////////////////////////
 
@@ -51,8 +51,6 @@ function initialize() {
       cards[idx].setAttribute('src', imgOption.img);
     }
   });
-  // handleSelection();
-  console.log(cardOptions, cards);
 }
 
 function startGame() {
@@ -68,7 +66,7 @@ function shuffleCards() {
   return cardOptions;
 }
 
-function handleFlip(event) {
+function handleFlipSelection(event) {
   let clickedCardId = parseInt(event.target.id.slice(1));
   let foundCard = cardOptions.find((card) => card.id === clickedCardId);
   foundCard.hidden = false;
@@ -80,21 +78,20 @@ function handleFlip(event) {
     cardTwo = cards[clickedCardId];
   }
   // console.log('clickedCardId=>', clickedCardId, 'foundCard=>', foundCard);
-  // console.log('cardOne=>', cardOne, 'cardTwo=>', cardTwo);
+  console.log('cardOne=>', cardOne, 'cardTwo=>', cardTwo);
   compareChoices();
 }
 
 function compareChoices() {
   if (cardOne === null || cardTwo === null) {
     return;
-  } else if (cardOne === cardTwo) {
+  } else if (cardOne.src === cardTwo.src) {
     console.log(`It's a celebration!`); // maybe as sound plays?
   } else {
     console.log(`No match!`); // maybe a sad sound plays
     setTimeout(flipBack, 2000);
     // decrement guesses
   }
-
   setTimeout(clearCards, 2500);
 }
 
