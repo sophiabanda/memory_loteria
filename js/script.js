@@ -104,3 +104,11 @@ function clearCards() {
   cardOne = null;
   cardTwo = null;
 }
+
+function checkForWin(){
+if(cardOptions.some((card) => card.hidden === true)){
+    return:
+  } else {
+    winGame();
+  }
+}
