@@ -1,24 +1,24 @@
 // ------ CONSTANTS -------------------------------------------------------------------
 const cardOptions = [
-  { img: '../css/assets/corazon.jpg', hidden: true },
-  { img: '../css/assets/borracho.jpg', hidden: true },
-  { img: '../css/assets/corazon.jpg', hidden: true },
-  { img: '../css/assets/selena_cantante.jpg', hidden: true },
-  { img: '../css/assets/gallo.jpg', hidden: true },
-  { img: '../css/assets/luna.jpg', hidden: true },
-  { img: '../css/assets/gallo.jpg', hidden: true },
-  { img: '../css/assets/luna.jpg', hidden: true },
-  { img: '../css/assets/nopal.jpg', hidden: true },
-  { img: '../css/assets/escalera.jpg', hidden: true },
-  { img: '../css/assets/borracho.jpg', hidden: true },
-  { img: '../css/assets/paraguas.jpg', hidden: true },
-  { img: '../css/assets/nopal.jpg', hidden: true },
-  { img: '../css/assets/paraguas.jpg', hidden: true },
-  { img: '../css/assets/selena_cantante.jpg', hidden: true },
-  { img: '../css/assets/escalera.jpg', hidden: true },
+  { img: 'css/assets/corazon.jpg', hidden: true },
+  { img: 'css/assets/borracho.jpg', hidden: true },
+  { img: 'css/assets/corazon.jpg', hidden: true },
+  { img: 'css/assets/selena_cantante.jpg', hidden: true },
+  { img: 'css/assets/gallo.jpg', hidden: true },
+  { img: 'css/assets/luna.jpg', hidden: true },
+  { img: 'css/assets/gallo.jpg', hidden: true },
+  { img: 'css/assets/luna.jpg', hidden: true },
+  { img: 'css/assets/nopal.jpg', hidden: true },
+  { img: 'css/assets/escalera.jpg', hidden: true },
+  { img: 'css/assets/borracho.jpg', hidden: true },
+  { img: 'css/assets/paraguas.jpg', hidden: true },
+  { img: 'css/assets/nopal.jpg', hidden: true },
+  { img: 'css/assets/paraguas.jpg', hidden: true },
+  { img: 'css/assets/selena_cantante.jpg', hidden: true },
+  { img: 'css/assets/escalera.jpg', hidden: true },
   // each of the card options will be used twice and shuffled
 ];
-const backOfCard = '/css/assets/mexican_blanket.jpg';
+const backOfCard = 'css/assets/mexican_blanket.jpg';
 
 // ------ STATE VARS (MODEL) -----------------------------------------------------------
 let possibleMatches = cardOptions.length / 2;

@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Sombrero';
-  src: url('../css/assets/SombreroLight.ttf');
+  src: url('assets/SombreroLight.ttf');
 }
 
 * {
@@ -24,7 +24,7 @@ body {
       rgba(255, 255, 255, 0.3),
       rgba(255, 255, 255, 0.1)
     ),
-    url('../css/assets/negative-space-bright-yellow-brick.jpg');
+    url('assets/negative-space-bright-yellow-brick.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
