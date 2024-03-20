@@ -29,10 +29,13 @@ body {
   padding: 50px;
   color: rgb(34, 35, 75);
 }
-
+div {
+  margin: 0;
+  padding: 0;
+}
 h1 {
   text-align: center;
-  font-size: 10vmax;
+  font-size: 8vmax;
   margin: 0;
   text-shadow: 5px 5px 5px rgb(255, 255, 255, 0.8);
 }
@@ -47,13 +50,14 @@ img {
 }
 
 button {
-  font-size: 5vw;
+  font-size: 4vw;
   justify-self: center;
   text-align: center;
   justify-content: center;
   color: white;
   border-radius: 5%;
-  padding-top: 10px;
+  padding-top: 20px;
+  padding: 10;
   background-color: rgb(27, 29, 79);
 }
 
@@ -71,7 +75,7 @@ button {
   display: flex;
   text-align: center;
   justify-content: center;
-  font-size: 7vw;
+  font-size: 6vw;
   text-shadow: 5px 5px 5px rgb(255, 255, 255, 0.8);
 }
 
