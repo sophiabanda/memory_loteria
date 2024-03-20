@@ -15,7 +15,7 @@ html {
     url('assets/negative-space-bright-yellow-brick.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vmax;
+  height: 100%;
 }
 
 body {
