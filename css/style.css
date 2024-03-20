@@ -12,15 +12,17 @@ body {
   margin: 0 auto;
   height: 100%;
   display: grid;
-  color: rgb(27, 29, 79);
+  color: rgb(34, 35, 75);
+  /* color: rgb(187, 135, 4); */
 }
 
 body {
-  border: 3px solid black;
+  /* border: 3px solid black; */
   text-align: center;
+  background-color: rgb(34, 35, 75);
   background-image: linear-gradient(
-      rgba(255, 255, 255, 0.2),
-      rgba(255, 255, 255, 0.5)
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.1)
     ),
     url('/css/assets/negative-space-bright-yellow-brick.jpg');
   background-repeat: no-repeat;
@@ -29,13 +31,13 @@ body {
 
 h1 {
   text-align: center;
-  font-size: 8vw;
+  font-size: 10vw;
   margin: 0;
-  text-shadow: 5px 5px 5px rgba(255, 255, 255, 0.8);
+  text-shadow: 5px 5px 5px rgb(255, 255, 255, 0.8);
 }
 
 #container {
-  border: 3px dashed red;
+  /* border: 3px dashed red; */
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: minmax(150px, auto);
@@ -46,26 +48,27 @@ h1 {
   padding: 50px;
 }
 
-#container > .cards {
+/* #container > .cards {
   border: 5px solid #000000;
-}
+} */
 
 img {
   max-height: 17vh;
   max-width: 8vw;
   border-radius: 5px;
-  border: 2px solid white;
-  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.8);
+  border: 12px solid white;
+  box-shadow: 10px 10px 8px 10px rgba(0, 0, 0, 0.8);
+  margin: 20px;
 }
 
 button {
-  font-size: 3vw;
+  font-size: 5vw;
   justify-self: center;
   color: rgb(27, 29, 79);
 }
 
 #guesses {
-  border: 3px solid black;
+  /* border: 3px solid black; */
   display: flex;
   text-align: center;
   justify-content: center;
