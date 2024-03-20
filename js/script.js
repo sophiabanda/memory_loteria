@@ -63,7 +63,7 @@ function initialize(reset) {
   } else {
     cardOptions.forEach((imgOption, idx) => {
       imgOption.id = idx;
-      cards[idx].setAttribute('src', backOfCard);
+      // cards[idx].setAttribute('src', backOfCard);
       if (imgOption.hidden === true) {
         cards[idx].setAttribute('src', backOfCard);
       } else {
