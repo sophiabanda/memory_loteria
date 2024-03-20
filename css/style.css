@@ -7,19 +7,7 @@
   font-family: 'Sombrero';
 }
 
-html,
-body {
-  margin: 0 auto;
-  height: 100%;
-  display: grid;
-  color: rgb(34, 35, 75);
-  /* color: rgb(187, 135, 4); */
-}
-
-body {
-  /* border: 3px solid black; */
-  text-align: center;
-  background-color: rgb(34, 35, 75);
+html {
   background-image: linear-gradient(
       rgba(255, 255, 255, 0.3),
       rgba(255, 255, 255, 0.1)
@@ -27,30 +15,27 @@ body {
     url('assets/negative-space-bright-yellow-brick.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  height: 100vmax;
+}
+
+body {
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 30px;
+  justify-content: space-between;
+  justify-items: center;
+  text-align: center;
+  margin: 50px;
+  padding: 50px;
+  color: rgb(34, 35, 75);
 }
 
 h1 {
   text-align: center;
-  font-size: 10vw;
+  font-size: 10vmax;
   margin: 0;
   text-shadow: 5px 5px 5px rgb(255, 255, 255, 0.8);
 }
-
-#container {
-  /* border: 3px dashed red; */
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: minmax(150px, auto);
-  justify-content: space-between;
-  grid-gap: 30px;
-  justify-items: center;
-  margin: 50px;
-  padding: 50px;
-}
-
-/* #container > .cards {
-  border: 5px solid #000000;
-} */
 
 img {
   max-height: 17vh;
@@ -64,28 +49,36 @@ img {
 button {
   font-size: 5vw;
   justify-self: center;
-  color: rgb(27, 29, 79);
+  text-align: center;
+  justify-content: center;
+  color: white;
+  border-radius: 5%;
+  padding-top: 10px;
+  background-color: rgb(27, 29, 79);
+}
+
+#button:hover {
+  background-color: #8e863e;
+}
+
+#button:active {
+  background-color: #8e863e;
+  box-shadow: 10px 10px 5px #2a2a2a;
+  transform: translateY(4px);
 }
 
 #guesses {
-  /* border: 3px solid black; */
   display: flex;
   text-align: center;
   justify-content: center;
   font-size: 7vw;
+  text-shadow: 5px 5px 5px rgb(255, 255, 255, 0.8);
 }
 
 .fade-out {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s 2s, opacity 2s linear;
-}
-
-.fade-in {
-  background-repeat: repeat;
-  visibility: visible;
-  opacity: 1;
-  transition: opacity 2s linear;
 }
 
 .no-click {

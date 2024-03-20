@@ -33,14 +33,13 @@ const container = document.getElementById('container');
 const guessContainer = document.getElementById('guesses');
 const bodyContainer = document.querySelector('body');
 const h1 = document.querySelector('h1');
+const button = document.querySelector('button');
 
 // ------ EVENT LISTENERS --------------------------------------------------------------
 cards.forEach((card) => {
   card.addEventListener('click', handleFlipSelection);
 });
-document
-  .querySelector('button')
-  .addEventListener('click', () => initialize(true));
+button.addEventListener('click', () => initialize(true));
 
 // ------ FUNCTIONS  -------------------------------------------------------------------
 
@@ -59,6 +58,7 @@ function initialize(reset) {
       cards[idx].setAttribute('src', backOfCard);
       cards[idx].classList.remove('no-click');
       cards[idx].classList.remove('fade-out');
+      button.innerText = `RESET`;
     });
   } else {
     cardOptions.forEach((imgOption, idx) => {
@@ -136,9 +136,12 @@ function loseGame() {
 }
 
 function winGame() {
-  bodyContainer.classList.add('fade-in');
+  cards.forEach((card) => {
+    card.classList.add('fade-out');
+  });
   bodyContainer.style.backgroundImage = 'url(css/assets/papel_picado.jpeg)';
   h1.innerText = `Ganaste!!! Congratulations!!`;
+  h1.style.color = 'white';
   container.style.justifyContent = 'center';
 }
 
