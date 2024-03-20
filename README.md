@@ -1,43 +1,38 @@
-# Memory Lotería
+# Welcome to Memory Lotería! 🎉
 
-### _Welcome to my game of Concentration!_
+### **Description:**
 
 This browser game of Concentration is inspired by a game from my childhood,
-Mexican Lotería. It's been written in way that will be easy to optimize,
-enhance and expand in the future.
+Mexican Lotería. I created this game with a data-centric approach, and while it has not reached its full
+optimisation, in its current state it is easily scalable and able to be updated with more images and functions.
 
-# h1
+### **How to play:**
 
-## h2, etc
+Once the page has loaded, the game can begin! Start by clicking on one card, then another.
+If they are a match, they will remain upright so that you can select another two cards. If they do not match,
+they will quickly flip back over, and you will need to do your best to remember the cards locations in order
+to create more matches. For each incorrect match you lose one point. If you achieve all available matches, you win!
 
-This is a paragraph.
+_*Play now at [Memory Lotería](https://sophiabanda.github.io/memory_loteria/)*_
 
-This is another paragraph.
+#### Screen capture of the header with custom "Sombrero Light" font, available at: [Font.Download](https://font.download/font/sombrero#google_vignette)
 
-_I am italicized_ **I am bold**
-_I am also italicized_ **I also bold**
+![A screen capture of the loaded game; yellow brick background, several mexican blanket cards, bold mexican style font](/css/assets/site_screenshot.png 'Screen cap of Memory Loteria')
 
-This is a link to [Markdown in 60 Seconds](https://www.youtube.com/shorts/4z0l5Kl2Q6E)
+#### Screen capture of a couple lotería cards face-up:
 
-This is an image ![alt text](image link "Title of the image")
+![A screen capture of some of the available mexican lotería cards face up](/css/assets/cards_screencap.png 'Screen cap of Memory Loteria')
 
-This is code
+### **Technologies Used**
 
-```javascript
-function clearCards() {
-  cardOne = null;
-  cardTwo = null;
-}
-```
+![JavaScript](https://img.shields.io/badge/-JavaScript-05122A?style=flat&logo=javascript)
+![HTML5](https://img.shields.io/badge/-HTML5-05122A?style=flat&logo=html5)  
+![Git](https://img.shields.io/badge/-Git-05122A?style=flat&logo=git)
+![Github](https://img.shields.io/badge/-GitHub-05122A?style=flat&logo=github)
+![VSCode](https://img.shields.io/badge/-VS_Code-05122A?style=flat&logo=visualstudio)
 
-This is a bulleted list
+### _*Upcoming Features*_
 
-- One
-- Two
-- Three
-
-This is a numbered list
-
-1.
-2.
-3.
+- Win and lose animation
+- Sounds effects
+- Timer functionality
