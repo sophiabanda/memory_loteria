@@ -1,10 +1,10 @@
 @font-face {
-  font-family: 'Mexicanero';
-  src: url('/css/Mexicanero.otf');
+  font-family: 'Sombrero';
+  src: url('/css/assets/SombreroLight.ttf');
 }
 
 * {
-  font-family: 'Mexicanero';
+  font-family: 'Sombrero';
 }
 
 html,
@@ -22,7 +22,7 @@ body {
       rgba(255, 255, 255, 0.2),
       rgba(255, 255, 255, 0.5)
     ),
-    url('/css/images/negative-space-bright-yellow-brick.jpg');
+    url('/css/assets/negative-space-bright-yellow-brick.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
