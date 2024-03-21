@@ -42,13 +42,13 @@ div {
 
 h1 {
   text-align: center;
-  font-size: 8vmax;
+  font-size: 5vmax;
   margin: 0;
   text-shadow: 3px 3px 3px rgb(255, 255, 255, 0.8);
 }
 
 img {
-  height: 17vh;
+  height: 15vh;
   width: auto;
   border-radius: 5px;
   border: 8px solid white;
@@ -57,14 +57,12 @@ img {
 }
 
 button {
-  font-size: 4vw;
-  justify-self: center;
-  text-align: center;
-  justify-content: center;
+  font-size: 3vw;
+  max-height: 7vh;
   color: white;
   border-radius: 5%;
-  padding: 10;
   background-color: rgb(27, 29, 79);
+  padding: 10px;
 }
 
 #button:hover {
@@ -78,10 +76,7 @@ button {
 }
 
 #guesses {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  font-size: 6vw;
+  font-size: 5vw;
   text-shadow: 3px 3px 3px rgb(255, 255, 255, 0.8);
 }
 
@@ -93,6 +88,14 @@ button {
 
 .no-click {
   pointer-events: none;
+}
+
+#bottom-div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+  width: 60%;
 }
 
 @media screen and (max-width: 560px) {
