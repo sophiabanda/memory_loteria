@@ -43,7 +43,7 @@ img {
   max-height: 17vh;
   max-width: 8vw;
   border-radius: 5px;
-  border: 12px solid white;
+  border: 8px solid white;
   box-shadow: 10px 10px 8px 10px rgba(0, 0, 0, 0.8);
   margin: 20px;
 }
