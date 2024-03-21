@@ -43,7 +43,6 @@ const button = document.querySelector('button');
 cards.forEach((card) => {
   card.addEventListener('click', handleFlipSelection);
 });
-button.addEventListener('click', () => initialize(true));
 
 // ------ FUNCTIONS  -------------------------------------------------------------------
 
@@ -60,8 +59,6 @@ function initialize(reset) {
     cardOptions.forEach((imgOption, idx) => {
       imgOption.id = idx;
       cards[idx].setAttribute('src', backOfCard);
-      cards[idx].classList.remove('no-click');
-      cards[idx].classList.remove('fade-out');
     });
   } else {
     cardOptions.forEach((imgOption, idx) => {
@@ -133,26 +130,62 @@ function clearCards() {
   cardTwo = null;
 }
 
-function loseGame() {
-  guessContainer.innerText = `😪 Would you like to try again?`;
+function clearWin() {
+  bodyContainer.style.backgroundImage =
+    'url(../css/assets/negative-space-bright-yellow-brick.jpg)';
+  h1.style.color = 'rgb(34, 35, 75)';
+  h1.classList.remove('animate__animated', 'animate__flip');
+  h1.innerText = 'Memory Lotería';
   cards.forEach((card) => {
-    card.classList.add('fade-out');
+    card.classList.remove('no-click');
+    card.classList.remove('fade-out');
+    card.classList.remove('animate__hinge');
+    card.classList.remove('animate__animate');
+  });
+  initialize(true);
+}
+
+function loseGame() {
+  guessContainer.innerText = `Better luck next time😪`;
+  cards.forEach((card) => {
+    card.classList.add('animate__rotateOutDownLeft', 'animate__animated');
     card.classList.add('no-click');
   });
+  guessContainer.style.setProperty('--animate-duration', '3s');
+  guessContainer.classList.add('animate__animated', 'animate__hinge');
+
+  setTimeout(clearLose, 5000);
 }
 
 function winGame() {
-  cards.forEach((card) => {
-    card.classList.add('fade-out');
-  });
   bodyContainer.style.backgroundImage = 'url(css/assets/papel_picado.jpeg)';
-  h1.innerText = `Ganaste!!! Congratulations!!`;
-  h1.style.color = 'white';
-  container.style.justifyContent = 'center';
+  h1.style.color = 'fuchsia';
+  h1.style.fontSize = '10vmin';
+  h1.classList.add('animate__animated', 'animate__flip');
+  h1.innerText = 'Congratulations! YOU WIN!';
+  cards.forEach((card) => {
+    card.classList.add('animate__animated', 'animate__tada');
+  });
+  setTimeout(clearWin, 5000);
 }
 
 function checkForWin() {
   if (matchedCards === possibleMatches) {
     winGame();
   }
+}
+
+function clearLose() {
+  console.log('I just ran!');
+  cards.forEach((card) => {
+    card.classList.remove('animate__rotateOutDownLeft', 'animate__animated');
+    card.classList.remove('no-click');
+  });
+  h1.classList.remove('animate__animated');
+  h1.classList.remove('animate__hinge');
+  guessContainer.style.removeProperty('--animate-duration', '3s');
+  guessContainer.classList.remove('animate__animated', 'animate__hinge');
+  guessContainer.innerHTML = `# of Guesses: ${numOfGuesses}`;
+
+  initialize(true);
 }
