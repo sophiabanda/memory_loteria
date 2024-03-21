@@ -5,8 +5,8 @@ const cardOptions = [
   { img: 'css/assets/corazon.jpg', hidden: true },
   { img: 'css/assets/selena_cantante.jpg', hidden: true },
   { img: 'css/assets/gallo.jpg', hidden: true },
-  { img: 'css/assets/luna.jpg', hidden: true },
   { img: 'css/assets/gallo.jpg', hidden: true },
+  { img: 'css/assets/luna.jpg', hidden: true },
   { img: 'css/assets/luna.jpg', hidden: true },
   { img: 'css/assets/nopal.jpg', hidden: true },
   { img: 'css/assets/escalera.jpg', hidden: true },
@@ -16,6 +16,8 @@ const cardOptions = [
   { img: 'css/assets/paraguas.jpg', hidden: true },
   { img: 'css/assets/selena_cantante.jpg', hidden: true },
   { img: 'css/assets/escalera.jpg', hidden: true },
+  { img: 'css/assets/sandia.jpeg', hidden: true },
+  { img: 'css/assets/sandia.jpeg', hidden: true },
 ];
 const backOfCard = 'css/assets/mexican_blanket.jpg';
 const salinas = new Audio('css/assets/selena.mp3');
