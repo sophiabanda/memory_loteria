@@ -106,7 +106,7 @@ function compareChoices() {
     cardTwo.classList.remove('no-click');
     setTimeout(flipBack, 1000);
   }
-  setTimeout(clearCards, 1002);
+  setTimeout(clearCards, 1001);
   setTimeout(checkForWin, 1000);
 }
 
