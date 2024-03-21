@@ -131,21 +131,6 @@ function clearCards() {
   cardTwo = null;
 }
 
-function clearWin() {
-  bodyContainer.style.backgroundImage =
-    'url(../css/assets/negative-space-bright-yellow-brick.jpg)';
-  h1.style.color = 'rgb(34, 35, 75)';
-  h1.classList.remove('animate__animated', 'animate__flip');
-  h1.innerText = 'Memory Lotería';
-  cards.forEach((card) => {
-    card.classList.remove('no-click');
-    card.classList.remove('fade-out');
-    card.classList.remove('animate__hinge');
-    card.classList.remove('animate__animate');
-  });
-  initialize(true);
-}
-
 function loseGame() {
   guessContainer.innerText = `Better luck next time😪`;
   cards.forEach((card) => {
@@ -176,8 +161,24 @@ function checkForWin() {
   }
 }
 
+function clearWin() {
+  bodyContainer.style.backgroundImage =
+    'url(css/assets/negative-space-bright-yellow-brick.jpg)';
+  h1.style.color = 'rgb(34, 35, 75)';
+  h1.classList.remove('animate__animated', 'animate__flip');
+  h1.innerText = 'Memory Lotería';
+  cards.forEach((card) => {
+    card.classList.remove('no-click');
+    card.classList.remove('fade-out');
+    card.classList.remove('animate__hinge');
+    card.classList.remove('animate__animate');
+  });
+  initialize(true);
+}
+
 function clearLose() {
-  console.log('I just ran!');
+  bodyContainer.style.backgroundImage =
+    'url(css/assets/negative-space-bright-yellow-brick.jpg)';
   cards.forEach((card) => {
     card.classList.remove('animate__rotateOutDownLeft', 'animate__animated');
     card.classList.remove('no-click');
