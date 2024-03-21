@@ -18,6 +18,8 @@ const cardOptions = [
   { img: 'css/assets/escalera.jpg', hidden: true },
 ];
 const backOfCard = 'css/assets/mexican_blanket.jpg';
+const salinas = new Audio('css/assets/selena.mp3');
+const selena = 'http://127.0.0.1:5500/css/assets/selena_cantante.jpg';
 
 // ------ STATE VARS (MODEL) -----------------------------------------------------------
 let possibleMatches = cardOptions.length / 2;
@@ -63,6 +65,8 @@ function initialize(reset) {
     cardOptions.forEach((imgOption, idx) => {
       imgOption.id = idx;
       if (imgOption.hidden === true) {
+      // cards[idx].setAttribute('src', backOfCard);
+      if (imgOption.hidden === false) {
         cards[idx].setAttribute('src', backOfCard);
       } else {
         cards[idx].setAttribute('src', imgOption.img);
@@ -97,8 +101,12 @@ function handleFlipSelection(event) {
 }
 
 function compareChoices() {
+  console.log(cardOne.src, cardTwo);
   if (cardOne === null || cardTwo === null) {
     return;
+  } else if (cardOne.src === cardTwo.src && cardOne.src === selena) {
+    salinas.play();
+    matchedCards++;
   } else if (cardOne.src === cardTwo.src) {
     matchedCards++;
   } else {
