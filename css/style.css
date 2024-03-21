@@ -15,7 +15,6 @@ body {
     url('./assets/negative-space-bright-yellow-brick.jpg');
   background-size: cover;
   height: 100%;
-  /* margin: 0 auto; */
   text-align: center;
   color: rgb(34, 35, 75);
   display: flex;
@@ -48,7 +47,7 @@ h1 {
 }
 
 img {
-  height: 15vh;
+  height: 13vh;
   width: auto;
   border-radius: 5px;
   border: 8px solid white;
@@ -56,34 +55,9 @@ img {
   margin: 10px;
 }
 
-button {
-  font-size: 3vw;
-  max-height: 7vh;
-  color: white;
-  border-radius: 5%;
-  background-color: rgb(27, 29, 79);
-  padding: 10px;
-}
-
-#button:hover {
-  background-color: #8e863e;
-}
-
-#button:active {
-  background-color: #8e863e;
-  box-shadow: 10px 10px 5px #2a2a2a;
-  transform: translateY(4px);
-}
-
 #guesses {
-  font-size: 5vw;
+  font-size: 5vmin;
   text-shadow: 3px 3px 3px rgb(255, 255, 255, 0.8);
-}
-
-.fade-out {
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s 2s, opacity 2s linear;
 }
 
 .no-click {
