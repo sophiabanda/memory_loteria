@@ -22,7 +22,8 @@ const cardOptions = [
 const backOfCard = 'css/assets/mexican_blanket.jpg';
 const salinas = new Audio('css/assets/selena.mp3');
 const localSelena = 'http://127.0.0.1:5500/css/assets/selena_cantante.jpg';
-const hostedSelena = `https://sophiabanda.github.io/memory_loteria/css/assets/selena_cantante.jpg`;
+const hostedSelena =
+  'https://sophiabanda.github.io/memory_loteria/css/assets/selena_cantante.jpg';
 
 // ------ STATE VARS (MODEL) -----------------------------------------------------------
 let possibleMatches = cardOptions.length / 2;
