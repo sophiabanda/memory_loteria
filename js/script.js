@@ -19,6 +19,8 @@ const cardOptions = [
   // each of the card options will be used twice and shuffled
 ];
 const backOfCard = 'css/assets/mexican_blanket.jpg';
+const salinas = new Audio('css/assets/selena.mp3');
+const selena = 'css/assets/selena_cantante.jpg';
 
 // ------ STATE VARS (MODEL) -----------------------------------------------------------
 let possibleMatches = cardOptions.length / 2;
@@ -101,6 +103,9 @@ function handleFlipSelection(event) {
 function compareChoices() {
   if (cardOne === null || cardTwo === null) {
     return;
+  } else if (cardOne.src === cardTwo.src && cardOne.src === selena) {
+    salinas.play();
+    matchedCards++;
   } else if (cardOne.src === cardTwo.src) {
     matchedCards++;
   } else {
@@ -108,6 +113,7 @@ function compareChoices() {
     cardTwo.classList.remove('no-click');
     setTimeout(flipBack, 1000);
   }
+  console.log(cardOne, cardTwo);
   setTimeout(clearCards, 1002);
   setTimeout(checkForWin, 1000);
 }
