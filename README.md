@@ -15,6 +15,8 @@ to create more matches. For each incorrect match you lose one point. If you achi
 
 _*Play now at [Memory Lotería](https://sophiabanda.github.io/memory_loteria/)*_
 
+Favicon donated by [Freepik](https://www.flaticon.com/free-icons/mexico")
+
 #### Screen capture of the header with custom "Sombrero Light" font, available at: [Font.Download](https://font.download/font/sombrero#google_vignette)
 
 ![A screen capture of the loaded game; yellow brick background, several mexican blanket cards, bold mexican style font](/css/assets/site_screenshot.png 'Screen cap of Memory Loteria')
