@@ -19,7 +19,8 @@ const cardOptions = [
 ];
 const backOfCard = 'css/assets/mexican_blanket.jpg';
 const salinas = new Audio('css/assets/selena.mp3');
-const selena = 'http://127.0.0.1:5500/css/assets/selena_cantante.jpg';
+const localSelena = 'http://127.0.0.1:5500/css/assets/selena_cantante.jpg';
+const hostedSelena = `https://sophiabanda.github.io/memory_loteria/css/assets/selena_cantante.jpg`;
 
 // ------ STATE VARS (MODEL) -----------------------------------------------------------
 let possibleMatches = cardOptions.length / 2;
@@ -48,7 +49,7 @@ initialize();
 
 function initialize(reset) {
   matchedCards = 0;
-  numOfGuesses = 10;
+  numOfGuesses = 9;
   guessContainer.innerText = `# of Guesses: ${numOfGuesses}`;
   shuffleCards();
   if (reset) {
@@ -59,7 +60,6 @@ function initialize(reset) {
       cards[idx].setAttribute('src', backOfCard);
       cards[idx].classList.remove('no-click');
       cards[idx].classList.remove('fade-out');
-      button.innerText = `RESET`;
     });
   } else {
     cardOptions.forEach((imgOption, idx) => {
@@ -102,7 +102,7 @@ function compareChoices() {
   console.log(cardOne.src, cardTwo);
   if (cardOne === null || cardTwo === null) {
     return;
-  } else if (cardOne.src === cardTwo.src && cardOne.src === selena) {
+  } else if (cardOne.src === cardTwo.src && cardOne.src === localSelena) {
     salinas.play();
     matchedCards++;
   } else if (cardOne.src === cardTwo.src) {
@@ -110,10 +110,10 @@ function compareChoices() {
   } else {
     cardOne.classList.remove('no-click');
     cardTwo.classList.remove('no-click');
-    setTimeout(flipBack, 1000);
+    setTimeout(flipBack, 700);
   }
-  setTimeout(clearCards, 1001);
-  setTimeout(checkForWin, 1000);
+  setTimeout(clearCards, 1000);
+  setTimeout(checkForWin, 1005);
 }
 
 function flipBack() {
