@@ -7,7 +7,7 @@
   font-family: 'Sombrero';
 }
 
-html {
+body {
   background-image: linear-gradient(
       rgba(255, 255, 255, 0.3),
       rgba(255, 255, 255, 0.1)
@@ -16,9 +16,6 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
-}
-
-body {
   margin: 0 auto;
   display: grid;
   grid-gap: 30px;
