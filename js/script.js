@@ -16,7 +16,6 @@ const cardOptions = [
   { img: 'css/assets/paraguas.jpg', hidden: true },
   { img: 'css/assets/selena_cantante.jpg', hidden: true },
   { img: 'css/assets/escalera.jpg', hidden: true },
-  // each of the card options will be used twice and shuffled
 ];
 const backOfCard = 'css/assets/mexican_blanket.jpg';
 
@@ -63,7 +62,6 @@ function initialize(reset) {
   } else {
     cardOptions.forEach((imgOption, idx) => {
       imgOption.id = idx;
-      // cards[idx].setAttribute('src', backOfCard);
       if (imgOption.hidden === true) {
         cards[idx].setAttribute('src', backOfCard);
       } else {
