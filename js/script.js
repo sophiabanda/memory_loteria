@@ -102,7 +102,7 @@ function compareChoices() {
   console.log(cardOne.src, cardTwo);
   if (cardOne === null || cardTwo === null) {
     return;
-  } else if (cardOne.src === cardTwo.src && cardOne.src === localSelena) {
+  } else if (cardOne.src === cardTwo.src && cardOne.src === hostedSelena) {
     salinas.play();
     matchedCards++;
   } else if (cardOne.src === cardTwo.src) {
