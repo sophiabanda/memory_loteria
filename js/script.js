@@ -112,7 +112,7 @@ function compareChoices() {
     cardTwo.classList.remove('no-click');
     setTimeout(flipBack, 700);
   }
-  setTimeout(clearCards, 1000);
+  setTimeout(clearCards, 701);
   setTimeout(checkForWin, 1005);
 }
 

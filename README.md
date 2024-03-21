@@ -33,6 +33,6 @@ _*Play now at [Memory Lotería](https://sophiabanda.github.io/memory_loteria/)*_
 
 ### _*Upcoming Features*_
 
+- Refactor of comparison data
 - Win and lose animation
-- Sounds effects
 - Timer functionality
