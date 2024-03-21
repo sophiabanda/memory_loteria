@@ -102,7 +102,7 @@ function compareChoices() {
   console.log(cardOne.src, cardTwo);
   if (cardOne === null || cardTwo === null) {
     return;
-  } else if (cardOne.src === cardTwo.src && cardOne.src === localSelena) {
+  } else if (cardOne.src === cardTwo.src && cardOne.src === hostedSelena) {
     salinas.play();
     matchedCards++;
   } else if (cardOne.src === cardTwo.src) {
@@ -112,7 +112,7 @@ function compareChoices() {
     cardTwo.classList.remove('no-click');
     setTimeout(flipBack, 700);
   }
-  setTimeout(clearCards, 1000);
+  setTimeout(clearCards, 701);
   setTimeout(checkForWin, 1005);
 }
 
