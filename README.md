@@ -25,6 +25,12 @@ Favicon donated by [Freepik](https://www.flaticon.com/free-icons/mexico")
 
 ![A screen capture of some of the available mexican lotería cards face up](/css/assets/cards_screencap.png 'Screen cap of Memory Loteria')
 
+#### Carbon Code Share
+
+This function in particular will be majorly refactored when I return to refactor this code, however, it contains something I am very proud of. I used the setting of the card data a an opportunity to dynamically set the id for each card image and position. It made it possible to create comparisons to the id positions in the dom.
+
+![A screen capture of the initialize function](/css/assets/carbon.png 'Screen cap of the initialize function')
+
 ### **Technologies Used**
 
 ![JavaScript](https://img.shields.io/badge/-JavaScript-05122A?style=flat&logo=javascript)
