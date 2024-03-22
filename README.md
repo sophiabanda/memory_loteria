@@ -13,6 +13,11 @@ If they are a match, they will remain upright so that you can select another two
 they will quickly flip back over, and you will need to do your best to remember the cards locations in order
 to create more matches. For each incorrect match you lose one point. If you achieve all available matches, you win!
 
+### **To add more cards:**
+
+- Add your image link to the cardOptions array twice
+- Add another 2 img elements to the HTML (or as many as you've added)
+
 _*Play now at [Memory Lotería](https://sophiabanda.github.io/memory_loteria/)*_
 
 Favicon donated by [Freepik](https://www.flaticon.com/free-icons/mexico")
