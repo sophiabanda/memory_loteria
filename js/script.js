@@ -134,7 +134,7 @@ function clearCards() {
 function loseGame() {
   guessContainer.innerText = `Better luck next time😪`;
   cards.forEach((card) => {
-    card.classList.add('animate__rotateOutDownLeft', 'animate__animated');
+    card.classList.add('animate__shakeX', 'animate__animated');
     card.classList.add('no-click');
   });
   guessContainer.style.setProperty('--animate-duration', '3s');
@@ -146,8 +146,9 @@ function loseGame() {
 function winGame() {
   bodyContainer.style.backgroundImage = 'url(css/assets/papel_picado.jpeg)';
   h1.style.color = 'fuchsia';
-  h1.style.fontSize = '10vmin';
+  h1.style.fontSize = '12vmin';
   h1.classList.add('animate__animated', 'animate__flip');
+  h1.style.setProperty('--animate-duration', '4s');
   h1.innerText = 'Congratulations! YOU WIN!';
   cards.forEach((card) => {
     card.classList.add('animate__animated', 'animate__tada');
@@ -168,10 +169,7 @@ function clearWin() {
   h1.classList.remove('animate__animated', 'animate__flip');
   h1.innerText = 'Memory Lotería';
   cards.forEach((card) => {
-    card.classList.remove('no-click');
-    card.classList.remove('fade-out');
-    card.classList.remove('animate__hinge');
-    card.classList.remove('animate__animate');
+    card.classList.remove('animate__hinge', 'animate__tada', 'no-click');
   });
   initialize(true);
 }
@@ -180,14 +178,12 @@ function clearLose() {
   bodyContainer.style.backgroundImage =
     'url(css/assets/negative-space-bright-yellow-brick.jpg)';
   cards.forEach((card) => {
-    card.classList.remove('animate__rotateOutDownLeft', 'animate__animated');
+    card.classList.remove('animate__shakeX', 'animate__animated');
     card.classList.remove('no-click');
   });
-  h1.classList.remove('animate__animated');
-  h1.classList.remove('animate__hinge');
+  h1.classList.remove('animate__animated', 'animate__hinge');
   guessContainer.style.removeProperty('--animate-duration', '3s');
   guessContainer.classList.remove('animate__animated', 'animate__hinge');
   guessContainer.innerHTML = `# of Guesses: ${numOfGuesses}`;
-
   initialize(true);
 }
