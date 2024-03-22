@@ -99,7 +99,6 @@ function handleFlipSelection(event) {
 }
 
 function compareChoices() {
-  console.log(cardOne.src, cardTwo);
   if (cardOne === null || cardTwo === null) {
     return;
   } else if (cardOne.src === cardTwo.src && cardOne.src === hostedSelena) {
