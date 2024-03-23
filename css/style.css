@@ -73,9 +73,18 @@ img {
 }
 
 @media screen and (max-width: 560px) {
+  body {
+    margin-top: 8vh;
+  }
+
   #container {
-    grid-template-columns: repeat(4, 1fr);
-    justify-items: center;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #container > * {
+    flex: 1 1 1 1 8vh;
   }
 
   img {
