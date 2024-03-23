@@ -47,10 +47,10 @@ h1 {
 }
 
 img {
-  height: 13vh;
+  height: 15vh;
   width: auto;
-  border-radius: 5px;
-  border: 8px solid white;
+  border-radius: 2px;
+  border: 0.55vw solid white;
   box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.8);
   margin: 10px;
 }
