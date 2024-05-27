@@ -174,8 +174,6 @@ function clearWin() {
 }
 
 function clearLose() {
-  bodyContainer.style.backgroundImage =
-    'url(css/assets/negative-space-bright-yellow-brick.jpg)';
   cards.forEach((card) => {
     card.classList.remove('animate__shakeX', 'animate__animated');
     card.classList.remove('no-click');
