@@ -47,5 +47,5 @@ This function in particular will be majorly refactored when I return to refactor
 ### _*Upcoming Features*_
 
 - Refactor of comparison data
-- Win and lose animation
 - Timer functionality
+- Improvements to win and lose animation
