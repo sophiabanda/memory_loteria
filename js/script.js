@@ -39,6 +39,9 @@ const guessContainer = document.getElementById('guesses');
 const bodyContainer = document.querySelector('body');
 const h1 = document.querySelector('h1');
 const button = document.querySelector('button');
+let backgroundImage = document.querySelector('body');
+const backgroundImageStyling =
+  'linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url("css/assets/negative-space-bright-yellow-brick.jpg")';
 
 // ------ EVENT LISTENERS --------------------------------------------------------------
 cards.forEach((card) => {
@@ -46,31 +49,21 @@ cards.forEach((card) => {
 });
 
 // ------ FUNCTIONS  -------------------------------------------------------------------
-
 initialize();
 
-function initialize(reset) {
+function initialize() {
   matchedCards = 0;
   numOfGuesses = 9;
   guessContainer.innerText = `# of Guesses: ${numOfGuesses}`;
   shuffleCards();
-  if (reset) {
-    cards.hidden = true;
-    shuffleCards();
-    cardOptions.forEach((imgOption, idx) => {
-      imgOption.id = idx;
+  cardOptions.forEach((imgOption, idx) => {
+    imgOption.id = idx;
+    if (imgOption.hidden === true) {
       cards[idx].setAttribute('src', backOfCard);
-    });
-  } else {
-    cardOptions.forEach((imgOption, idx) => {
-      imgOption.id = idx;
-      if (imgOption.hidden === true) {
-        cards[idx].setAttribute('src', backOfCard);
-      } else {
-        cards[idx].setAttribute('src', imgOption.img);
-      }
-    });
-  }
+    } else {
+      cards[idx].setAttribute('src', imgOption.img);
+    }
+  });
 }
 
 function shuffleCards() {
@@ -162,8 +155,7 @@ function checkForWin() {
 }
 
 function clearWin() {
-  bodyContainer.style.backgroundImage =
-    'url(css/assets/negative-space-bright-yellow-brick.jpg)';
+  backgroundImage.style.backgroundImage = backgroundImageStyling;
   h1.style.color = 'rgb(34, 35, 75)';
   h1.classList.remove('animate__animated', 'animate__flip');
   h1.innerText = 'Memory Lotería';
