@@ -126,11 +126,12 @@ function clearCards() {
 function loseGame() {
   guessContainer.innerText = `Better luck next time😪`;
   cards.forEach((card) => {
-    card.classList.add('animate__shakeX', 'animate__animated');
+    card.classList.add('animate__hinge', 'animate__animated');
     card.classList.add('no-click');
+    card.style.setProperty('--animate-duration', '1s');
   });
   guessContainer.style.setProperty('--animate-duration', '3s');
-  guessContainer.classList.add('animate__animated', 'animate__hinge');
+  guessContainer.classList.add('animate__animated', 'animate__fadeInLeft');
 
   setTimeout(clearLose, 5000);
 }
@@ -167,12 +168,12 @@ function clearWin() {
 
 function clearLose() {
   cards.forEach((card) => {
-    card.classList.remove('animate__shakeX', 'animate__animated');
+    card.classList.remove('animate__hinge', 'animate__animated');
     card.classList.remove('no-click');
   });
   h1.classList.remove('animate__animated', 'animate__hinge');
   guessContainer.style.removeProperty('--animate-duration', '3s');
-  guessContainer.classList.remove('animate__animated', 'animate__hinge');
+  guessContainer.classList.remove('animate__animated', 'animate__shakeX');
   guessContainer.innerHTML = `# of Guesses: ${numOfGuesses}`;
   initialize(true);
 }
