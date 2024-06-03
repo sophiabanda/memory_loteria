@@ -58,11 +58,7 @@ function initialize() {
   shuffleCards();
   cardOptions.forEach((imgOption, idx) => {
     imgOption.id = idx;
-    if (imgOption.hidden === true) {
-      cards[idx].setAttribute('src', backOfCard);
-    } else {
-      cards[idx].setAttribute('src', imgOption.img);
-    }
+    cards[idx].setAttribute('src', backOfCard);
   });
 }
 
@@ -126,8 +122,7 @@ function clearCards() {
 function loseGame() {
   guessContainer.innerText = `Better luck next time😪`;
   cards.forEach((card) => {
-    card.classList.add('animate__hinge', 'animate__animated');
-    card.classList.add('no-click');
+    card.classList.add('animate__hinge', 'animate__animated', 'no-click');
     card.style.setProperty('--animate-duration', '1s');
   });
   guessContainer.style.setProperty('--animate-duration', '3s');
@@ -161,17 +156,15 @@ function clearWin() {
   h1.classList.remove('animate__animated', 'animate__flip');
   h1.innerText = 'Memory Lotería';
   cards.forEach((card) => {
-    card.classList.remove('animate__hinge', 'animate__tada', 'no-click');
+    card.classList.remove('animate__animated', 'animate__tada', 'no-click');
   });
   initialize(true);
 }
 
 function clearLose() {
   cards.forEach((card) => {
-    card.classList.remove('animate__hinge', 'animate__animated');
-    card.classList.remove('no-click');
+    card.classList.remove('animate__hinge', 'animate__animated', 'no-click');
   });
-  h1.classList.remove('animate__animated', 'animate__hinge');
   guessContainer.style.removeProperty('--animate-duration', '3s');
   guessContainer.classList.remove('animate__animated', 'animate__shakeX');
   guessContainer.innerHTML = `# of Guesses: ${numOfGuesses}`;
