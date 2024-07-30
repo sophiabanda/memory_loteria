@@ -34,9 +34,9 @@ Animation made easy with Animate.css @ Animate.style
 
 #### Carbon Code Share
 
-This function in particular will be majorly refactored when I return to refactor this code, however, it contains something I am very proud of. I used the setting of the card data a an opportunity to dynamically set the id for each card image and position. It made it possible to create comparisons to the id positions in the dom.
+I loved how easy it was to dynamically set the indexes of the card in order for the game logic to function, regardless of how many cards you choose to add in the future. I am also a big fan of the Fisher-Yates alorithm - it made shuffling smooth and easy.
 
-![A screen capture of the initialize function](/css/assets/carbon.png 'Screen cap of the initialize function')
+![A screen capture of the initialize function](/css/assets/loteria-carbon.png 'Screen cap of the initialize and fisher-yates functions')
 
 ### **Technologies Used**
 
