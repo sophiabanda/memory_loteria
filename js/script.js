@@ -34,7 +34,6 @@ let cardTwo = null;
 
 // ------ CACHED ELS -------------------------------------------------------------------
 const cards = [...document.querySelectorAll('img')];
-const container = document.getElementById('container');
 const guessContainer = document.getElementById('guesses');
 const bodyContainer = document.querySelector('body');
 const h1 = document.querySelector('h1');
